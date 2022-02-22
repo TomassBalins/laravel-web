@@ -27,4 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     
     Route::get('/task/{task}', [TasksController::class, 'edit']);
     Route::post('/task/{task}', [TasksController::class, 'update']);
+
+    Route::get('/sample',[TasksController::class, 'sample']);
+  
 });

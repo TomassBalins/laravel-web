@@ -56,5 +56,10 @@ class TasksController extends Controller
 	    	$task->save();
 	    	return redirect('/dashboard'); 
     	}    	
+    } 
+     public function sample()
+    {
+    return "prakses paraugs";
+    	    	
     }
 }
