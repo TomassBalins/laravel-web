@@ -59,7 +59,35 @@ class TasksController extends Controller
     } 
      public function sample()
     {
+        $tasks = \DB::table('tasks')->get();
+        $task = $tasks->first();
+        //var_dump($task->toArray());
+        //print_r($task);
+        //dump($task);
+        return view('sample',['tasks'=>$tasks]);     
     return "prakses paraugs";
     	    	
+    }
+    public function prakse_input()
+    {
+        $tasks = \DB::table('tasks')->get();
+        $task = $tasks->first();
+        //var_dump($task->toArray());
+        //print_r($task);
+        //dump($task);
+        return view('prakse_input',['tasks'=>$tasks]);     
+    return "prakses paraugs";
+    	    	
+    }
+
+    public function prakse_input_send( Task $task,$inputName,$inputValue )
+    {
+        // $tasks = \DB::table('tasks')->get();
+        //var_dump($task->toArray());
+        //print_r($task);
+        //dump($task);
+            $task->$inputName = $inputValue;
+	    	$task->save();
+        return 'success'. $task. $inputName. $inputValue;	
     }
 }

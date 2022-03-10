@@ -29,5 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::post('/task/{task}', [TasksController::class, 'update']);
 
     Route::get('/sample',[TasksController::class, 'sample']);
+
+    Route::get('/prakse_input',[TasksController::class, 'prakse_input']);
+    Route::get('/prakse_input_send/{task}/{inputName}/{inputValue}',[TasksController::class, 'prakse_input_send']);
   
 });
